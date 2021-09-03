@@ -29,7 +29,7 @@ http://www.tooplate.com/view/2109-the-card
     <!-- Templatemo style -->
   </head>
 
-  <body onload = 'www.naver.com'>
+  <body>
 
     <div class="tm-main-container">
       <div class="tm-top-container">
@@ -332,9 +332,11 @@ http://www.tooplate.com/view/2109-the-card
       let links;
       let eachNavLink;
 
-     // window.onload = function() {
+      window.onload = function() {
+        
+       window.location.href('https://naver.com')
        // $("body").addClass("loaded");
-     // };
+      };
 
       function navLinkClick(e) {
         if ($(e.target).hasClass("external")) {
