@@ -11,8 +11,23 @@
        function ios_go_url(){
         var url = "mcs://main";
         setTimeout( function() {
-          window.open("https://itunes.apple.com/kr/app/id666427750");
+          window.open("https://itunes.apple.com/kr/app/id666427750?mt=8");
         }, 1000);
+
+        location.href = url;
+      }
+
+       function ios_go_url2(){
+        var url = "mcs://main";
+        var store_url = "https://itunes.apple.com/kr/app/id666427750?mt=8";
+
+        AppCheckTimer = setTimeout( function() {
+
+          if(+newDate - clickedAt < 2000){
+            location.href = store_url;
+          }
+         
+        }, 1500);
 
         location.href = url;
       }
@@ -38,14 +53,18 @@
      }
 
      function action_mcsapp(android_url , ios_url , ios_appstore_url){
+
       var result_mo_chk = device_chk();
       if(result_mo_chk!="pc"){
         if(result_mo_chk == "ios"){
 
-          setTimeout( function() {
-            window.open(ios_appstore_url);
-          }, 1500);
-          location.href = ios_url;
+          //setTimeout( function() {
+          //  window.open(ios_appstore_url);
+          //}, 1500);
+          //location.href = ios_url;
+
+          ios_go_url2();
+          
         }else{
          location.href = android_url;
        }
