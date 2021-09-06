@@ -52,7 +52,7 @@
        }
      }
 
-     function action_mcsapp(android_url , ios_url , ios_appstore_url){
+     function action_mcsapp(android_url){
 
       var result_mo_chk = device_chk();
       if(result_mo_chk!="pc"){
@@ -64,9 +64,10 @@
           //location.href = ios_url;
 
           ios_go_url2();
-          
+
         }else{
-         location.href = android_url;
+         //location.href = android_url;
+         location.href = "intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end";
        }
      }
    }
@@ -129,13 +130,12 @@
           <a href="intent://#Intent;scheme=starbucks;package=com.starbucks.co;end"> 스타벅스</a><br>
 
           <a href="intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end"> 법원앱(안드로이드) </a><br> 
-          <a href="javascript:ios_go_url()"> 법 원앱(아이 폰) </a><br> 
+          <a href="javascript:ios_go_url2()"> 법 원앱(아이폰) </a><br> 
 
-          <a href="javascript:ios_go_url()"> 법 원앱(아이 폰) </a><br> 
+          <!--span onclick="action_mcsapp('intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end', 'mcs://main', 'https://itunes.apple.com/kr/app/id666427750?mt=8')">MCS App 실행 </span-->
 
-          <span onclick="action_mcsapp('intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end', 'mcs://main', 'https://itunes.apple.com/kr/app/id666427750?mt=8')">
-            MCS App 실행 
-        </span>
+          <span onclick="action_mcsapp()">MCS App </span>
+
 
 
 
