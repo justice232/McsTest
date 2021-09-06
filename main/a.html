@@ -1,12 +1,83 @@
 <html>
  <head>
+
+<script>
+       //window.location.href('https://naver.com')
+
+       function ios_go_url(){
+        var url = "mcs://main";
+        setTimeout( function() {
+          window.open("https://itunes.apple.com/kr/app/id666427750?mt=8");
+        }, 1000);
+
+        location.href = url;
+      }
+
+       function ios_go_url2(){
+        var url = "mcs://main";
+        var store_url = "https://itunes.apple.com/kr/app/id666427750?mt=8";
+
+        AppCheckTimer = setTimeout( function() {
+
+          if(+newDate - clickedAt < 2000){
+            location.href = store_url;
+          }
+         
+        }, 1500);
+
+        location.href = url;
+      }
+
+      function device_chk(){
+
+        var os;
+        var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));  
+
+        if (mobile) {
+          var userAgent = navigator.userAgent.toLowerCase();
+          if (userAgent.search("android") > -1){
+            return os = "android";
+          }else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
+            return os = "ios";
+          }else{
+            return os = "otehr";
+          }
+
+        } else {
+         return os = "pc";
+       }
+     }
+
+     function action_mcsapp(android_url){
+
+      var result_mo_chk = device_chk();
+      if(result_mo_chk!="pc"){
+        if(result_mo_chk == "ios"){
+
+          //setTimeout( function() {
+          //  window.open(ios_appstore_url);
+          //}, 1500);
+          //location.href = ios_url;
+
+          ios_go_url();
+
+        }else{
+         //location.href = android_url;
+         location.href = "intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end";
+       }
+     }
+   }
+    </script>
+
+
  <title>justice test test test</title>
   <script>
       // window.onload = function(){
       //   window.location.href('https://naver.com')
       // }
 
-      location.href = 'https://naver.com';
+      //location.href = 'https://naver.com';
+      location.href = action_mcsapp();
        
   </script>
  </head>
