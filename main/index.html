@@ -17,13 +17,44 @@
         location.href = url;
       }
 
+      function device_chk(){
+
+        var os;
+        var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));  
+
+        if (mobile) {
+          var userAgent = navigator.userAgent.toLowerCase();
+          if (userAgent.search("android") > -1){
+            return os = "android";
+          }else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
+            return os = "ios";
+          }else{
+            return os = "otehr";
+          }
+
+        } else {
+         return os = "pc";
+       }
+     }
+
+     function action_mcsapp(android_url , ios_url , ios_appstore_url){
+      var result_mo_chk = device_chk();
+      if(result_mo_chk!="pc"){
+        if(result_mo_chk == "ios"){
+
+          setTimeout( function() {
+            window.open(ios_appstore_url);
+          }, 1500);
+          location.href = ios_url;
+        }else{
+         location.href = android_url;
+       }
+     }
+   }
     </script>
 
     <title>MCS Test Test Test</title>
-    <!--
-Template 2109 The Card
-http://www.tooplate.com/view/2109-the-card
--->
+
     <!-- load CSS -->
     <!--link
       rel="stylesheet"
@@ -80,6 +111,12 @@ http://www.tooplate.com/view/2109-the-card
 
           <a href="intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end"> 법원앱(안드로이드) </a><br> 
           <a href="javascript:ios_go_url()"> 법 원앱(아이 폰) </a><br> 
+
+          <a href="javascript:ios_go_url()"> 법 원앱(아이 폰) </a><br> 
+
+          <span onclick="action_mcsapp('intent://intro/#Intent;scheme=mcs;package=go.scourt.mcs;end', 'mcs://main', 'https://itunes.apple.com/kr/app/id666427750?mt=8')">
+            MCS App 실행 
+        </span>
 
 
 
