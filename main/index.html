@@ -2,30 +2,19 @@
  <head>
 
  <script>
-       //window.location.href('https://naver.com')
+       // function ios_go_url2(){
+       //  var url = "mcs://main";
+       //  var store_url = "https://itunes.apple.com/kr/app/id666427750?mt=8";
 
-       function ios_go_url(){
-        var url = "mcs://main";
-        setTimeout( function() {
-          window.open("https://itunes.apple.com/kr/app/id666427750?mt=8");
-        }, 1000);
+       //  AppCheckTimer = setTimeout( function() {
 
-        location.href = url;
-      }
-
-       function ios_go_url2(){
-        var url = "mcs://main";
-        var store_url = "https://itunes.apple.com/kr/app/id666427750?mt=8";
-
-        AppCheckTimer = setTimeout( function() {
-
-          if(+newDate - clickedAt < 2000){
-            location.href = store_url;
-          }
+       //    if(+newDate - clickedAt < 2000){
+       //      location.href = store_url;
+       //    }
          
-        }, 1500);
+       //  }, 1500);
 
-        location.href = url;
+       //  location.href = url;
       }
 
       function device_chk(){
@@ -68,30 +57,28 @@
        }
      }
    }
-    </script>
-    <script type="text/javascript">
+
+   function ios_go_url(){
+        var url = "mcs://main";
+        setTimeout( function() {
+          window.open("https://itunes.apple.com/kr/app/id666427750?mt=8");
+        }, 1000);
+
+        location.href = url;
+    }
+
+  </script>
+  <script type="text/javascript">
        window.onload = function(){
-      //   window.location.href('https://naver.com');
-      action_mcsapp();
+         action_mcsapp();
        };
-
-      //location.href = 'https://naver.com';
-      //location.href = action_mcsapp();
-
-      //$(document).ready(function(){
-      //  alert("TTTTT");
-      //});
-
-     // $(function(){
-     //   alert("TTTTT"); 
-     // });
   </script>
 
 
- <title>justice test test test ttttttt</title>
+ <title>MCSApp Call Test</title>
 
  </head>
  <body onload='javascript:action_mcsapp();'>
-a.html ㅇㅇㅇㅇㅇㅇㅛㅛㅛsssssㅛㅛㅛㅛㅛㅛㅛ
+MCSApp Call Test
  </body>
 </html>
