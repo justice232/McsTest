@@ -1,22 +1,14 @@
-<html>
- <head>
-
- <script>
-       // function ios_go_url2(){
-       //  var url = "mcs://main";
-       //  var store_url = "https://itunes.apple.com/kr/app/id666427750?mt=8";
-
-       //  AppCheckTimer = setTimeout( function() {
-
-       //    if(+newDate - clickedAt < 2000){
-       //      location.href = store_url;
-       //    }
-         
-       //  }, 1500);
-
-       //  location.href = url;
-      //}
-
+<%--
+시스템명 : 전자소송 모바일 웹 (MCS)
+파 일 명 : qr.jsp
+작성일자 : 2021.09.24
+처리내용 : 대한민국법원앱설치페이지
+History  : 2021.09.24 최초작성 이정의 [21A-MCS-0018] 통지서 관련 QR코드 연결을 위한 기능 추가
+--%>
+<%@ page contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" %>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+  <head>
+    <script type="text/javascript">
       function ios_go_url(){
         var url = "mcs://main";
         setTimeout( function() {
@@ -38,7 +30,7 @@
           }else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
             return os = "ios";
           }else{
-            return os = "otehr";
+            return os = "other";
           }
 
         } else {
@@ -52,35 +44,23 @@
       if(result_mo_chk!="pc"){
         if(result_mo_chk == "ios"){
 
-          //setTimeout( function() {
-          //  window.open(ios_appstore_url);
-          //}, 1500);
-          //location.href = ios_url;
-
           ios_go_url();
 
         }else{
-         //location.href = android_url;
          location.href = "intent://Intro/#Intent;scheme=mcs;package=go.scourt.mcs;end";
-
        }
      }
-   }
-
- </script>
- <script type="text/javascript">
+    }
+    </script>
+    <script type="text/javascript">
        window.onload = function(){
       //   window.location.href('https://naver.com');
       action_mcsapp();
        };
- </script>
-
-
- <title>MCSApp Call Test</title>
-
- </head>
- <body>
- <!--body onload='javascript:action_mcsapp();'-->
-MCSApp Call Test
- </body>
+    </script>
+ 
+  <title>대한민국법원</title> 
+  </head>
+  <body>
+  </body>
 </html>
